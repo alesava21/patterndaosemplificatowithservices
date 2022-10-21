@@ -43,6 +43,7 @@ public class TestUser {
 			testCercaPerCognomeENomeCheInziaCon(userService);
 			System.out.println("In tabella ci sono " + userService.listAll().size() + " elementi.");
 
+			testLoginIn(userService);
 			
 			// E TUTTI I TEST VANNO FATTI COSI'
 
@@ -174,6 +175,19 @@ public class TestUser {
 		}
 
 		System.out.println(".......testCercaPerCognomeENomeCheInziaCon PASSED.............");
+	}
+	
+	private static void testLoginIn(UserService userService) throws Exception {
+		System.out.println(".......testLoginIn inizio.............");
+
+		User result= null;
+		String login="avavv";
+		String password="bobobo";
+		
+		result = userService.accedi(login, password);
+		System.out.println(result);
+		System.out.println(".......testLoginIn PASSED.............");
+
 	}
 
 }
